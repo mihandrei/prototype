@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>centrate</title>
+    <script type="application/javascript" src="centrate.js"></script>
+    <style type="text/css">
+        body{
+            margin: 0;
+            font-family: "Helvetica", "Arial", sans-serif;
+            font-size: 90%;
+            background-color: #fafafa;
+        }
+        header{
+            border-bottom: 4px solid #009cff;
+            background-color: #4d4d4d;
+            color: white;
+            padding: 4px;
+        }
+        table td{
+            vertical-align: top;
+        }
+        h1, h2 {
+            margin: 4px 0 4px 0;
+        }
+        .panel table{
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #ccc;
+        }
+        .panel table th{
+            border:0;
+            border-left: 1px solid #ccc;
+            padding: 4px;
+            background-color: #eee;
+        }
+        .panel table td{
+            border:0;
+            border-left: 1px solid #ccc;
+            padding: 4px;
+            font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+        }
+        input{
+            width: 4em;
+        }
+        .panel{
+            margin: 12px;
+        }
+        #solver-panel{
+            left: 280px;
+            top:0;
+        }
+        .invalid {
+            border-color: indianred;
+        }
+        #howto{
+            color: #555;
+            max-width: 500px;
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Centrate</h1>
+    </header>
+
+    <table>
+    <tr>
+        <td>
+            <div id="player" class="panel">
+                <h2>player</h2>
+                <table>
+                    <thead>
+                        <tr><th>you asked</th><th>computer answered</th></tr>
+                    </thead>
+                    <tbody id="askTbl">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td> <input id="asked_nr" type="text"/> <button id="ask">ask</button> </td>
+                            <td>  </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div id="solver-panel" class="panel">
+                <h2>solver</h2>
+                <table>
+                    <thead>
+                        <tr><th>computer asked</th><th>you answered</th></tr>
+                    </thead>
+                    <tbody id="answerTbl">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td> <input id="answered" type="text"/> <button id="answer">answer</button> </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </td>
+    </tr>
+    </table>
+
+    <div class="panel">
+        <button id="reset">reset</button>
+    </div>
+    <div id="howto" class="panel">
+        <h2>How to play:</h2>
+        <p>
+            You and the computer choose 2 secret numbers. The numbers are 4 digits long and no digit repeats.
+        </p>
+        <p>
+            The player who guesses the opponents number first wins.
+        </p>
+        <p>
+            The player asks a number.
+        </p>
+        <p>
+            The opponent will have to give an answer to that number.
+            If a digit from the question is found in the secret number on the same position we call it a direct hit.
+            If it is not on the same position it is an indirect hit.
+            Direct hits are marked with X, indirects with 0
+        </p>
+        <p>One answers by saying how many hits were direct and how many not.</p>
+        <p>Ex: secret 1980 question 1902 has answer xx0 because 1 and 9 are on the same positions in the secret while 0 is not</p>
+        <p>Ex: secret 1980 question 5437 hits nothing and we mark that with -</p>
+    </div>
+</body>
+
+</html>
