@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>centrate</title>
+    <script type="application/javascript" src="centrate.js"></script>
+    <script type="application/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        MSG = MSG_ro;
+        control = new Control(); 
+    });
+    </script>
+    <style type="text/css">
+        body{
+            margin: 0;
+            font-family: "Helvetica", "Arial", sans-serif;
+            font-size: 90%;
+            background-color: #fafafa;
+        }
+        header{
+            border-bottom: 4px solid #009cff;
+            background-color: #4d4d4d;
+            color: white;
+            padding: 4px;
+        }
+        table td{
+            vertical-align: top;
+        }
+        h1, h2 {
+            margin: 4px 0 4px 0;
+        }
+        .panel table{
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #ccc;
+        }
+        .panel table th{
+            border:0;
+            border-left: 1px solid #ccc;
+            padding: 4px;
+            background-color: #eee;
+        }
+        .panel table td{
+            border:0;
+            border-left: 1px solid #ccc;
+            padding: 4px;
+            font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+        }
+        input{
+            width: 4em;
+        }
+        .panel{
+            margin: 12px;
+        }
+        #solver-panel{
+            left: 280px;
+            top:0;
+        }
+        .invalid {
+            border-color: indianred;
+        }
+        #howto{
+            color: #555;
+            max-width: 500px;
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Centrate</h1>
+    </header>
+
+    <table>
+    <tr>
+        <td>
+            <div id="player" class="panel">
+                <h2>jucator</h2>
+                <table>
+                    <thead>
+                        <tr><th>ai intrebat</th><th>raspunsul</th></tr>
+                    </thead>
+                    <tbody id="askTbl">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td> <input id="asked_nr" type="text"/> <button id="ask">intreaba</button> </td>
+                            <td>  </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div id="solver-panel" class="panel">
+                <h2>calculator</h2>
+                <table>
+                    <thead>
+                        <tr><th>calculatorul a intrebat</th><th>ai raspuns</th></tr>
+                    </thead>
+                    <tbody id="answerTbl">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td> <input id="answered" type="text"/> <button id="answer">raspunde</button> </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </td>
+    </tr>
+    </table>
+
+    <div class="panel">
+        <button id="reset">reseteaza</button>
+    </div>
+    <div id="howto" class="panel">
+        <h2>Cum se joaca:</h2>
+        <p>
+            Tu si calculatorul alegeti 2 numere secrete, numere de 4 cifre ce nu se repeta.
+        </p>
+        <p>
+            Jucatorul ce gaseste numarul oponentului castiga.
+        </p>
+        <p>
+            Jucatorii intreaba numere.
+            Oponentul va raspunde la acel numar.
+        </p>
+        <p>            
+            O cifra din intrebare gasita in numarul tau secret pe aceeasi pozitie e o centrata. Daca cifra nu e pe aceasi pozitie dar e continuta in secret e o necentrata.
+            Centratele le notam cu X iar necentratele cu 0.
+        </p>
+        <p>Se raspunde zicand cate cifre sunt centrata si cate necentrate.</p>
+        <p>Ex: secret 1980 intrebarea 1902 are raspunsul xx0 deoarece 1 si 9 sunt in 1980 pe aceleasi pozitii iar 0 e in 1980 </p>
+        <p>Ex: secret 1980 intrebarea 5437 nu nimereste nimic si marcam asta cu -</p>
+    </div>
+</body>
+
+</html>
