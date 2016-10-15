@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>centrate</title>
+    <script type="application/javascript" src="spokes.js"></script>
+    <style type="text/css">
+        body{
+            margin: 0;
+            font-family: "Helvetica", "Arial", sans-serif;
+            font-size: 90%;
+            background-color: #fafafa;
+        }
+        header{
+            border-bottom: 4px solid #009cff;
+            background-color: #4d4d4d;
+            color: white;
+            padding: 4px;
+        }
+
+        h1, h2 {
+            margin: 4px 0 4px 0;
+        }
+
+        .panel{
+            margin: 12px;
+        }
+        .invalid {
+            border-color: indianred;
+        }
+        #howto{
+            color: #555;
+            max-width: 500px;
+            font-size: small;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Oscilatori pe spitze</h1>
+    </header>
+
+    <canvas id="canvas" width="400" height="400">
+
+    </canvas>
+
+    <div class="panel">
+
+    <label> spitze <input type="range" id="nspitze" min="1", max="32"  value="2"/> <span id="nspitzelbl">2</span> </label>
+    <label> defazare <input type="range" id="phasediff" min="0", max="120"   value="0"/> pi*<span id="phasedifflbl">0</span>/120</label>
+<!--     <label> frecventa <input type="range" id="freq" min="1", max="10"  value="2"/> </label> -->
+
+    </div>
+    <div id="howto" class="panel">
+        <p>
+        Exploreaza ce modele ordonate pot aparea din oscilatori pe spitze. Oscilatori armonici independenti.
+        <p>
+        Forme apar cand defazarea e un intreg.
+        <p>
+        Inspirat de o postare a Adinei.
+    </div>
+</body>
+
+</html>
